@@ -1,4 +1,5 @@
 import * as fs from 'fs';
+import { returnArrayOfDigits } from '../utils';
 const data = String(fs.readFileSync('./day3/data.txt')).split(/\r?\n/);
 /*
  *-10123456789-1
@@ -71,14 +72,6 @@ const matchedValues = data.flatMap((str, originIndex, inputArray) => {
 });
 
 console.log(matchedValues.reduce((prev, curr) => prev + curr, 0));
-
-function returnArrayOfDigits(start: number, end: number) {
-	let val = [];
-	for (let index = start; index <= end; index++) {
-		val.push(index);
-	}
-	return val;
-}
 
 function returnDigits(str: string, starLeftOf: number, starRightOf: number) {
 	let lineMatches = [];
